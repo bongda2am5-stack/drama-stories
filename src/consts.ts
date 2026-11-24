@@ -3,7 +3,7 @@
 export const SITE_TITLE = "Drama Stories";
 export const SITE_DESCRIPTION =
 	"Gripping stories about family feuds, relationship twists, workplace conflicts and neighbor disputes, told from start to finish.";
-export const CONTACT_EMAIL = "lienhe@niri.vn";
+export const CONTACT_EMAIL = "biz.niri@gmail.com";
 
 export const CATEGORIES = {
 	family: "Family",
