@@ -4,6 +4,7 @@ description: "When Grandma passed, she left her house to both of us. Three month
 pubDate: 2026-11-26
 category: "family"
 tags: ["inheritance", "siblings", "family house"]
+heroImage: "/images/image-1-editorial.png"
 draft: false
 ---
 
@@ -20,6 +21,7 @@ Grandma Ruth raised my sister Dana and me in that house for most of our childhoo
 When Grandma died in the spring, her will was short and clear. The house went to both of us, fifty-fifty. Her letter, tucked inside the will, said she hoped we would "decide together, and kindly."
 
 Dana lives three states away. I live twenty minutes from Alder Street. So I was the one who cleared the gutters, paid the water bill and spent my weekends sorting forty years of Grandma's life into boxes. Dana called once a month. She always said the same thing: "No rush. We'll figure it out."
+![An old blue house with a porch](/images/image-2-editorial.png)
 
 ## A contract I had never seen
 
@@ -44,6 +46,7 @@ There was a long silence. Then she started talking very fast. She was behind on 
 "I thought you'd say no," she admitted. "You always say no to selling."
 
 That part stung, because it was true. I had said, more than once, that I wasn't ready.
+![An old blue house with a porch](/images/image-3-editorial.png)
 
 ## What I found out
 
