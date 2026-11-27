@@ -7,7 +7,7 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://drama-stories.bongda2am-5.workers.dev",
+	site: "https://dramastoriesdaily.com",
 	integrations: [mdx(), sitemap()],
 	adapter: cloudflare({
 		platformProxy: {
