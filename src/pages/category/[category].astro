@@ -1,0 +1,84 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import { SITE_TITLE, CATEGORIES } from '../../consts';
+import { getCollection } from 'astro:content';
+
+export function getStaticPaths() {
+	return Object.keys(CATEGORIES).map((category) => ({ params: { category } }));
+}
+
+const { category } = Astro.params;
+const name = CATEGORIES[category as keyof typeof CATEGORIES];
+const posts = (
+	await getCollection('blog', ({ data }) => !data.draft && data.category === category)
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={name + ' | ' + SITE_TITLE}
+			description={'Read ' + name.toLowerCase() + ' on ' + SITE_TITLE + ', told from start to finish.'}
+		/>
+		<style>
+			.story-list {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			.story-list li {
+				padding: 1.25em 0;
+				border-bottom: 1px solid rgb(var(--gray-light));
+			}
+			.story-list a {
+				text-decoration: none;
+			}
+			.story-list img {
+				margin-bottom: 0.5rem;
+				border-radius: 12px;
+			}
+			.story-list h2 {
+				font-size: 1.4em;
+				margin: 0 0 0.25em 0;
+			}
+			.meta {
+				color: rgb(var(--gray));
+				font-size: 0.85em;
+				margin: 0 0 0.5em 0;
+			}
+			.excerpt {
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>{name}</h1>
+			{posts.length === 0 && <p>New stories are on the way. Check back soon.</p>}
+			<ul class="story-list">
+				{
+					posts.map((post) => (
+						<li>
+							<a href={'/blog/' + post.id + '/'}>
+								{post.data.heroImage && (
+									<img width={720} height={360} src={post.data.heroImage} alt="" loading="lazy" />
+								)}
+								<h2>{post.data.title}</h2>
+							</a>
+							<p class="meta">
+								<FormattedDate date={post.data.pubDate} />
+							</p>
+							<p class="excerpt">{post.data.description}</p>
+						</li>
+					))
+				}
+			</ul>
+		</main>
+		<Footer />
+	</body>
+</html>
