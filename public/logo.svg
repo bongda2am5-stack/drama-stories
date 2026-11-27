@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 72">
+	<g transform="translate(4 4)">
+		<rect width="64" height="64" rx="14" fill="#2b1035" />
+		<path
+			d="M14 14h36a7 7 0 0 1 7 7v19a7 7 0 0 1-7 7H31l-11 9v-9h-6a7 7 0 0 1-7-7V21a7 7 0 0 1 7-7z"
+			fill="#ff4d6d"
+		/>
+		<path d="M36 18 23.5 33.5h8.5l-3.5 10.5L41 28h-8.5l3.5-10z" fill="#ffd166" />
+	</g>
+	<text
+		x="84"
+		y="47"
+		font-family="Georgia, 'Times New Roman', serif"
+		font-size="34"
+		font-weight="700"
+		fill="#2b1035"
+	>
+		Drama <tspan fill="#e63958">Stories</tspan>
+	</text>
+</svg>
