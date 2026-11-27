@@ -12,7 +12,7 @@ const blog = defineCollection({
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
 		category: z
-			.enum(["family", "relationships", "workplace", "neighbors", "weddings", "friendship"])
+			.enum(["family", "relationships", "workplace", "neighbors", "weddings", "friendship", "scary"])
 			.default("family"),
 		tags: z.array(z.string()).default([]),
 		draft: z.boolean().default(false),
