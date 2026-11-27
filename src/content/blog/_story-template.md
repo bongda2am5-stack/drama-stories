@@ -7,7 +7,9 @@
 title: "Story title goes here"
 description: "One or two sentences that hook the reader. Shown on the homepage and in Google."
 pubDate: 2026-11-24
-category: "family" # family | relationships | workplace | neighbors | weddings | friendship
+category: "family" # family | relationships | workplace | neighbors | weddings | friendship | scary
+# For scary stories: build suspense and atmosphere, no graphic gore,
+# no self-harm, no harm to children, and keep the fiction note at the end.
 tags: ["example-tag"]
 draft: true
 ---
