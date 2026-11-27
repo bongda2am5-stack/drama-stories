@@ -12,7 +12,7 @@ const links = [
 <header>
 	<nav>
 		<a href="/" class="brand" aria-label="Drama Stories home">
-			<img src="/favicon.svg" width="36" height="36" alt="" />
+			<img src="/logo-badge.webp" width="48" height="48" alt="" />
 			<span class="brand-text">Drama <span class="brand-accent">Stories</span></span>
 		</a>
 		<div class="internal-links">
@@ -48,7 +48,7 @@ const links = [
 		text-decoration: none;
 	}
 	.brand img {
-		border-radius: 8px;
+		border-radius: 50%;
 	}
 	.brand-text {
 		font-family: Georgia, 'Times New Roman', serif;
@@ -57,7 +57,8 @@ const links = [
 		color: #2b1035;
 	}
 	.brand-accent {
-		color: #e63958;
+		color: #e3182e;
+		font-style: italic;
 	}
 	.internal-links {
 		display: flex;
@@ -71,7 +72,7 @@ const links = [
 	}
 	.internal-links a.active {
 		font-weight: bolder;
-		border-bottom-color: #e63958;
+		border-bottom-color: #e3182e;
 	}
 	@media (max-width: 720px) {
 		.internal-links a {
