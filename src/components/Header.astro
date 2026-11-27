@@ -1,16 +1,28 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+const path = Astro.url.pathname;
+const links = [
+	{ href: '/', label: 'Home', active: path === '/' },
+	{ href: '/blog/', label: 'Stories', active: path.startsWith('/blog') },
+	{ href: '/category/scary/', label: 'Scary Stories', active: path.startsWith('/category/scary') },
+	{ href: '/about/', label: 'About', active: path.startsWith('/about') },
+	{ href: '/contact/', label: 'Contact', active: path.startsWith('/contact') },
+];
 ---
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<a href="/" class="brand" aria-label="Drama Stories home">
+			<img src="/favicon.svg" width="36" height="36" alt="" />
+			<span class="brand-text">Drama <span class="brand-accent">Stories</span></span>
+		</a>
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Stories</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-			<HeaderLink href="/contact">Contact</HeaderLink>
+			{
+				links.map((l) => (
+					<a href={l.href} class:list={[{ active: l.active }]}>
+						{l.label}
+					</a>
+				))
+			}
 		</div>
 	</nav>
 </header>
@@ -21,33 +33,50 @@ import { SITE_TITLE } from '../consts';
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
 	nav {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
 	}
-	nav a {
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+		padding: 0.5em 0;
+		border-bottom: none;
+		text-decoration: none;
+	}
+	.brand img {
+		border-radius: 8px;
+	}
+	.brand-text {
+		font-family: Georgia, 'Times New Roman', serif;
+		font-weight: 700;
+		font-size: 1.15em;
+		color: #2b1035;
+	}
+	.brand-accent {
+		color: #e63958;
+	}
+	.internal-links {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.internal-links a {
 		padding: 1em 0.5em;
 		color: rgb(var(--black));
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
 	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
+	.internal-links a.active {
+		font-weight: bolder;
+		border-bottom-color: #e63958;
 	}
 	@media (max-width: 720px) {
-		nav a {
-			padding: 0.75em 0.4em;
+		.internal-links a {
+			padding: 0.6em 0.4em;
+			font-size: 0.85em;
 		}
 	}
 </style>
